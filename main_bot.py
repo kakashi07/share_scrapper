@@ -33,7 +33,7 @@ class jordan():
             volume_transacted = self.driver.find_element_by_xpath('//table/tbody/tr['+str(i)+']/td[9]').text
             TY_highest =self.driver.find_element_by_xpath('//table/tbody/tr['+str(i)+']/td[19]').text
             TY_lowest =self.driver.find_element_by_xpath('//table/tbody/tr['+str(i)+']/td[20]').text
-            temp = [date_of_scrap,company_name,closing_price,volume_transacted,TY_highest,TY_lowest]
+            temp = [date_of_scrap,company_name,float(closing_price),int(volume_transacted),float(TY_highest),float(TY_lowest)]
             self.data_list.append(temp)
 
         return  self.data_list
